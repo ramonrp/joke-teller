@@ -12,7 +12,7 @@ async function getJokeText() {
         if (joke.type == "twopart") {
             jokeText = joke.setup + joke.delivery
         } else {
-            joke.joke;
+            jokeText = joke.joke;
         }
         speechJoke(jokeText);
     } catch (err) {
@@ -22,6 +22,7 @@ async function getJokeText() {
 }
 
 function speechJoke(jokeText) {
+    //create audioUrl and populate audioag. 
     const audioURL = `http://api.voicerss.org/?key=fd0d80678ef64171830cac0bb104aea4&hl=en-us&src=${jokeText}"`;
     audio.src = audioURL;
 }
